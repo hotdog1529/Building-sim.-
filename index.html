@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Build & Destroy Simulator — Characters & Rotation</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <aside id="toolbar">
+    <div class="brand">Build & Destroy</div>
+
+    <div class="group">
+      <label class="section-title">Tools</label>
+      <button class="tool active" data-tool="spawn">Spawn</button>
+      <button class="tool" data-tool="erase">Erase</button>
+      <button class="tool" data-tool="grab">Grab</button>
+      <button class="tool" data-tool="person">Add Person</button>
+    </div>
+
+    <div class="group">
+      <label class="section-title">Shapes / Buildings</label>
+      <button class="shape active" data-shape="rectangle">Rectangle</button>
+      <button class="shape" data-shape="circle">Circle</button>
+      <button class="shape" data-shape="beam">Beam</button>
+      <button class="shape" data-shape="glass">Glass Panel</button>
+      <button class="shape" data-shape="trampoline">Trampoline</button>
+    </div>
+
+    <div class="group">
+      <label class="section-title">Weapons (drag & drop)</label>
+      <div class="weapons">
+        <div class="weapon" data-weapon="bomb">💣 Bomb</div>
+        <div class="weapon" data-weapon="tnt">🧨 TNT</div>
+        <div class="weapon" data-weapon="grenade">🟢 Grenade</div>
+      </div>
+    </div>
+
+    <div class="group">
+      <label class="section-title">Options</label>
+      <label><input id="gravityToggle" type="checkbox" checked /> Gravity</label>
+      <label><input id="snapToggle" type="checkbox" /> Snap to Grid</label>
+      <label>Size <input id="sizeRange" type="range" min="10" max="140" value="50" /></label>
+      <label>Rotation: <span id="rotationDisplay">0°</span></label>
+    </div>
+
+    <div class="group">
+      <label class="section-title">Actions</label>
+      <button id="clearBtn">Clear</button>
+      <button id="downloadBtn">Download PNG</button>
+    </div>
+  </aside>
+
+  <main id="stage-wrapper">
+    <canvas id="stage"></canvas>
+    <div id="hint">Drag a weapon or click to spawn shapes/people. Tap weapons to explode. Use arrow keys to rotate building pieces.</div>
+  </main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
